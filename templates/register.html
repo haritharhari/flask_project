@@ -1,0 +1,29 @@
+{% extends "login.html" %}
+ {% block content %}
+  <h3>Register</h3>    
+        {% with messages = get_flashed_messages() %}
+            {%if messages %}
+              {% for message in messages %}
+                <h2 style="color:red">{{message}}</h2>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+           <form method="post">
+            <input name="name"type="text"placeholder="name"/>
+            <label for="utype">Usertype</label>
+            <select name="utype" id="">
+            <option value=""></option>
+            <option value="patient">Patient</option>
+            <option value="doctor">Doctor</option>
+          </select> 
+            <input name="username" type="text" placeholder="username"/>
+            <input name="password" type="text" placeholder="password"/>
+            <input name="email" type="text" placeholder="email"/>
+            <button name="submit" type="submit">Register</button>
+            <p class="messages">already registered<a href="#">submit</a></p>
+
+        </form>
+         You have an account <a href ="/">Here</a>
+       
+
+{% endblock %}
